@@ -8,18 +8,28 @@ namespace LineComparison
 {
     internal class Line
     {
-        double length;
+
+        public double Length;
         double[] x = new double[2], y = new double[2];
+
         public double CalculateLength()
         {
-            length = Math.Sqrt(Math.Pow(x[1] - x[0], 2) + Math.Pow(y[1] - y[0], 2));
-            length = Math.Round(length, 2);
-            return length;
+            Length = Math.Sqrt(Math.Pow(x[1] - x[0], 2) + Math.Pow(y[1] - y[0], 2));
+            Length = Math.Round(Length, 2);
+            return Length;
         }
 
-        public void input(string s)
+        public static void Compare(double length1, double length2)
         {
-            Console.WriteLine("Enter the co-ordinates for " + s);
+            if (length1.Equals(length2))
+                Console.WriteLine("\nThe Two Lines Are Of Equal Lengths");
+            else
+                Console.WriteLine("\nThe Two Lines Are Not Of Equal Lengths");
+        }
+
+        public void Input(string lineName)
+        {
+            Console.WriteLine("Enter the co-ordinates for " + lineName);
             for (int i = 0; i < 2; i++)
             {
                 Console.Write("Enter x[" + i + "]: ");
