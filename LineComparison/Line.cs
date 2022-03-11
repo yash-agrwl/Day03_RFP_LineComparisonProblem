@@ -10,11 +10,11 @@ namespace LineComparison
     {
 
         public double Length;
-        double[] x = new double[2], y = new double[2];
+        double[] X = new double[2], Y = new double[2];
 
         public double CalculateLength()
         {
-            Length = Math.Sqrt(Math.Pow(x[1] - x[0], 2) + Math.Pow(y[1] - y[0], 2));
+            Length = Math.Sqrt( Math.Pow(X[1] - X[0], 2) + Math.Pow(Y[1] - Y[0], 2) );
             Length = Math.Round(Length, 2);
             return Length;
         }
@@ -36,9 +36,9 @@ namespace LineComparison
             for (int i = 0; i < 2; i++)
             {
                 Console.Write("Enter x[" + i + "]: ");
-                x[i] = Convert.ToDouble(Console.ReadLine());
+                X[i] = Convert.ToDouble(Console.ReadLine());
                 Console.Write("Enter y[" + i + "]: ");
-                y[i] = Convert.ToDouble(Console.ReadLine());
+                Y[i] = Convert.ToDouble(Console.ReadLine());
             }
             Console.WriteLine("\n");
         }
