@@ -21,10 +21,13 @@ namespace LineComparison
 
         public static void Compare(double length1, double length2)
         {
-            if (length1.Equals(length2))
+            int lengthCheck = length1.CompareTo(length2);
+            if (lengthCheck == 0)
                 Console.WriteLine("\nThe Two Lines Are Of Equal Lengths");
+            else if (lengthCheck == 1)
+                Console.WriteLine("\nLength Of Line1 Is Greater Than Line2");
             else
-                Console.WriteLine("\nThe Two Lines Are Not Of Equal Lengths");
+                Console.WriteLine("\nLength Of Line2 Is Greater Than Line1");
         }
 
         public void Input(string lineName)
